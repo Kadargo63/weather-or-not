@@ -13,17 +13,23 @@ function setup() {
     }
 }
 
-function weatherBalloon( cityID ) {
-    var key = '{d778222891cde7aa699d4d39200e67b4}'
-    fetch('https://api.openweathermap.org/data.2.5/weather?id=' + cityID+ '&appid=' + key)
-    .then(function(resp) {return resp.json() }) //convert data to json
-    .then(function(data) {
-        console.log(data);
+function weatherBalloon(  ) {
+    var key = "d778222891cde7aa699d4d39200e67b4";
+    var apiUrl = pro.openweathermap.org/data/2.5/forecast/hourly?q={city name},{state code}&appid={key};
+    fetch(apiUrl).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+            })
+        }else {
+            alert("ErRor");
+        }
     })
-    .catch(function() {
+    .catch(function(error) {
+        alert("Unable to connect to OpenWeather")
         //catch any errors
     });
 }
 window.onload = function() {
-    weatherBalloon(6167865);
+    weatherBalloon(2643743);
 }
