@@ -8,8 +8,11 @@
 .input{
     text-align: center;
 }
-input[type="text"]{
+input[type="submit"]{
     
+}
+.display{
+    text-align: center;
 }
 
 body {

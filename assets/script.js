@@ -1,35 +1,41 @@
-//api.openweathermap.org/data/2.5/forecast/daily?id={city ID}&cnt={cnt}&appid={d778222891cde7aa699d4d39200e67b4}
 
-let userInput;
+var button = document.querySelector(".button");
+var inputValue = document.querySelector(".inputValue");
+var name = document.querySelector("name");
+var desc = document.querySelector("name");
+var temp = document.querySelector("name");
+var key = "d778222891cde7aa699d4d39200e67b4";
+var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?id=524901" + "&appid=" + key;
 
-function setup() {
-    userInput = select("#userinput");
-    userInput.changed(openWeather)
-    openWeather();
-
-    function openWeather() {
-        let term = userInput.value();
-         console.log(term)
-    }
-}
-
-function weatherBalloon(  ) {
-    var key = "d778222891cde7aa699d4d39200e67b4";
-    var apiUrl = pro.openweathermap.org/data/2.5/forecast/hourly?q={city name},{state code}&appid={key};
+button.addEventListener("click", function() {
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
                 console.log(data);
-            })
-        }else {
-            alert("ErRor");
-        }
-    })
-    .catch(function(error) {
-        alert("Unable to connect to OpenWeather")
-        //catch any errors
+                })
+            }else {
+                alert("ErRor");
+            }
+        })
+        .catch(function(error) {
+            alert("Unable to connect to OpenWeather")
+            //catch any errors
     });
-}
-window.onload = function() {
-    weatherBalloon(2643743);
-}
+})
+
+// let userInput;
+
+// function setup() {
+//     userInput = select("#userinput");
+//     userInput.changed(openWeather)
+//     openWeather();
+
+//     function openWeather() {
+//         let term = userInput.value();
+//          console.log(term)
+//     }
+// }
+
+// function weatherBalloon(  ) {
+    
+// }
