@@ -1,20 +1,22 @@
-
+//https://api.openweathermap.org/data/2.5/weather?q=&appid=d778222891cde7aa699d4d39200e67b4
 var button = document.querySelector(".button");
-var inputValue = document.querySelector(".inputValue");
-var name = document.querySelector("name");
-var desc = document.querySelector("name");
-var temp = document.querySelector("name");
-var key = "d778222891cde7aa699d4d39200e67b4";
-var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?id=524901" + "&appid=" + key;
+
+var name = document.querySelector(".name");
+var desc = document.querySelector(".desc");
+var temp = document.querySelector(".temp");
 
 button.addEventListener("click", function() {
+var inputValue = document.querySelector(".inputValue");
+var key = "d778222891cde7aa699d4d39200e67b4";
+var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + inputValue.value + "&appid=" + key
+
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
                 console.log(data);
                 })
             }else {
-                alert("ErRor");
+                alert("Error");
             }
         })
         .catch(function(error) {

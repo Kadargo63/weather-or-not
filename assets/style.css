@@ -5,12 +5,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .input{
     text-align: center;
+    margin: 100px 0;
 }
-input[type="submit"]{
-    
-}
+
+/* input[type="submit"]{
+    height: 50px;
+    width: 200px;
+    background: #fff;
+    font_family:Montserrat;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px
+} */
 .display{
     text-align: center;
 }
