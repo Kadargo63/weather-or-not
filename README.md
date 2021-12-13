@@ -5,6 +5,8 @@
   A simple web application that allows users to search for a city to get the current weather and 5 day forecast. This weather dashboard will run in the browser and       feature dynamically updated HTML and CSS.
 
   ![image](https://user-images.githubusercontent.com/88639772/145903291-a9d03200-e4fc-4160-aafc-645b95b72682.png)
+  
+  Dployed at: https://kadargo63.github.io/weather-or-not/ 
 
   # Table of Contents 
   * [Installation](#-Installation)
